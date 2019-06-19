@@ -1,5 +1,7 @@
 package com.lion.bigdata.controller;
 
+import com.lion.bigdata.hadoop.hdfs.HdfsTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -22,6 +24,9 @@ public class BigDataController {
 
     @Value("${server.port}")
     String port;
+
+    @Autowired
+    HdfsTemplate hdfsTemplate;
 
     @RequestMapping("/hi")
     public String hi() {
